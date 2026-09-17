@@ -9,6 +9,7 @@ enum ExploitSupportPolicy {
         (1, nil, "24A5355q"),
         (2, nil, "24A5370h"),
         (3, 1, "24A5380h"),
+        (3, 1, "24A5380l"),
         (4, 2, "24A5390f")
     ]
 
