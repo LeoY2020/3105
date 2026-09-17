@@ -12,7 +12,7 @@ permissions:
 jobs:
   build-ipa:
     name: Build 3105 with Xcode 27
-    runs-on: macos-26
+    runs-on: macos-27
 
     steps:
       - name: Checkout
