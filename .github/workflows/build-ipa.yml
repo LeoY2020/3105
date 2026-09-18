@@ -49,9 +49,12 @@ jobs:
           set -euo pipefail
           APP_PATH="build/3105.xcarchive/Products/Applications/3105.app"
           test -d "$APP_PATH"
-          mkdir -p build/Payload
-          ditto "$APP_PATH" build/Payload/3105.app
-          /usr/bin/zip -qry build/3105-unsigned.ipa build/Payload
+          rm -rf build/ipa_root build/3105-unsigned.ipa
+          mkdir -p build/ipa_root/Payload
+          ditto "$APP_PATH" build/ipa_root/Payload/3105.app
+          cd build/ipa_root
+          /usr/bin/zip -qry ../3105-unsigned.ipa Payload
+          cd ../..
           test -f build/3105-unsigned.ipa
 
       - name: Upload unsigned IPA
